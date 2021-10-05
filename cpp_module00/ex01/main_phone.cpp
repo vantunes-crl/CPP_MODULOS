@@ -1,14 +1,27 @@
 #include "phone.h"
 
+void print_text(std::string str)
+{
+    std::cout << std::left << std::setw(10) << str.substr(0, 10);
+}
+
 void printfList(phonebook *n)
 {
+    if (!n)
+        std::cout << "list empty";
     while (n != NULL)
     {
-        std::cout  << std::left << std::setw(10) << std::setfill(' ') << n->first_name;
-        std::cout  << std::left << std::setw(10) << std::setfill(' ') << n->last_name;
-        std::cout  << std::left << std::setw(10) << std::setfill(' ') << n->nick_name;
-        std::cout  << std::left << std::setw(10) << std::setfill(' ') << n->phone_number;
-        std::cout  << std::left << std::setw(10) << std::setfill(' ') << n->darkest_secret;
+        std::cout << '|';
+        print_text(n->first_name);
+        std::cout << '|';
+        print_text(n->last_name);
+        std::cout << '|';
+        print_text(n->nick_name);
+        std::cout << '|';
+        print_text(n->phone_number);
+        std::cout << '|';
+        print_text(n->darkest_secret);
+        std::cout << '|';
         std::cout << '\n';
         n = n->next;
     }
@@ -62,13 +75,11 @@ int main(int argc, char **argv)
         std::cout << "************************************\n";
         std::cin >> input;
         if (input == "ADD")
-        {
             appendData(&list);
-        }
         else if (input == "SEARCH")
-        {
             printfList(list);
-        }
+        else if (input != "EXIT")
+            std::cout << "ERROR COMMAND\n";
     }
     return (0);
 }
