@@ -18,7 +18,7 @@ void test_input(phonebook **head_ref)
     }
     while (last->next != NULL) 
         last = last->next;
-    last->next = new_node;
+    last->next = new_node; 
     return;
 }
 

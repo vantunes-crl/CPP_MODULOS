@@ -3,6 +3,17 @@
 phonebook::phonebook()
 {};
 
+int list_size(phonebook *head)
+{
+    int count = 0;
+    while (head)
+    {
+        head = head->next;
+        count++;
+    }
+    return (count);
+}
+
 void appendData(phonebook **head_ref)
 {
     int i = 0;
@@ -31,7 +42,7 @@ void appendData(phonebook **head_ref)
     }
     while (last->next != NULL) 
         last = last->next;
-    last->next = new_node; 
+    last->next = new_node;
     return;
 }
 

@@ -26,6 +26,7 @@ void getDarkestSecret(phonebook *new_node);
 std::string gen_random(const int len);
 void print_text(std::string str);
 void printfList(phonebook *n);
+int list_size(phonebook *head);
 
 /* debug*/
 std::string gen_random(const int len);
