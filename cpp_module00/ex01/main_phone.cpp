@@ -39,8 +39,14 @@ int main(int argc, char **argv)
 {
     std::string input;
     phonebook *list = NULL;
+    std::string str;
+    str = "0";
+    if (argv[1])
+    {
+        std::string arg(argv[1]);
+        str = arg;
+    }
     int i = 0;
-
     while (input != "EXIT")
     {   
         std::cout << "************************************\n";
@@ -48,8 +54,10 @@ int main(int argc, char **argv)
         std::cout << "OPTIONS: ADD SEARCH EXIT\n";
         std::cout << "************************************\n";
         std::cin >> input;
-        if (input == "ADD")
+        if (input == "ADD" && str == "-d")
             test_input(&list);
+        else if (input == "ADD")
+            appendData(&list);
         else if (input == "SEARCH")
             printfList(list);
         else if (input != "EXIT")
