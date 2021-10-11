@@ -9,13 +9,11 @@
 
 class phonebook {
     public:
-        phonebook();
         std::string first_name;
         std::string last_name;
         std::string nick_name;
         std::string phone_number;
         std::string darkest_secret;
-        phonebook *next;
 };
 
 void getFirstName(phonebook *new_node);
@@ -25,11 +23,11 @@ void getPhoneNumber(phonebook *new_node);
 void getDarkestSecret(phonebook *new_node);
 std::string gen_random(const int len);
 void print_text(std::string str);
-void printfList(phonebook *n);
-int list_size(phonebook *head);
+void printfList(phonebook *book);
+void searchById(phonebook *book, int id);
 
 /* debug*/
 std::string gen_random(const int len);
-void test_input(phonebook **head_ref);
+void test_input(phonebook *book);
 
 #endif
