@@ -11,6 +11,7 @@ void test_input(phonebook *book)
 }
 
 
+
 std::string gen_random(const int len) 
 {
     

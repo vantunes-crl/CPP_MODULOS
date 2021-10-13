@@ -16,7 +16,10 @@ int main(int argc, char **argv)
         std::cout << "************************************\n";
         std::cin >> input;
         if (input == "ADD")
-            test_input(&book[i++]);
+        {
+            getInfo(&book[i++]);
+          //  test_input(&book[i++]);
+        }
         else if (input == "SEARCH")
             printfList(book);
         else if (input != "EXIT")
