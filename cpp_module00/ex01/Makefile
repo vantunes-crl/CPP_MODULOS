@@ -1,13 +1,11 @@
 NAME = phonebook
 
-SRCS = book.cpp test.cpp format.cpp get_info.cpp
-
-CMP = clang++
+SRCS = main.cpp utils.cpp format.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 NAME: $(OBJS)
-	$(CMP) $(OBJS) -o $(NAME)
+	clang++ $(OBJS) -o $(NAME)
 clean:
 	rm -f $(OBJS)
 fclean: clean

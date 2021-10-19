@@ -1,15 +1,14 @@
-#include "book.hpp"
+#include "phone.hpp"
 
 void test_input(phonebook *book)
 {
     srand (time(NULL));
-    book->first_name = gen_random(rand() % 15 + 1);
-    book->last_name = gen_random(rand() % 15 + 1);
-    book->nick_name = gen_random(rand() % 15 + 1);
-    book->phone_number = "920328998";
-    book->darkest_secret = gen_random(rand() % 15 + 1);
+    book->SetFirstName(gen_random(rand() % 15 + 1));
+    book->SetLastName(gen_random(rand() % 15 + 1));
+    book->SetNickName(gen_random(rand() % 15 + 1));
+    book->SetPhoneNumber("920328998");
+    book->SetDarkestSecret(gen_random(rand() % 15 + 1));
 }
-
 
 
 std::string gen_random(const int len) 

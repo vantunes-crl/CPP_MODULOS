@@ -1,4 +1,4 @@
-#include "book.hpp"
+#include "phone.hpp"
 
 void print_text(std::string str)
 {
@@ -33,16 +33,16 @@ void printfList(phonebook *book)
         std::cout << '|';
         std::cout << std::left << std::setw(10) << i + 1;
         std::cout << '|';
-        print_text(book[i].first_name);
+        print_text(book[i].GetFirstName());
         std::cout << '|';
-        print_text(book[i].last_name);
+        print_text(book[i].GetLastName());
         std::cout << '|';
-        print_text(book[i].nick_name);
+        print_text(book[i].GetNickName());
         std::cout << '|';
         std::cout << '\n';
     }
     std::cout << "---------------------------------------------\n";
-     std::cout << "Input the id\n";
+    std::cout << "Input the id\n";
     std::cin >> input;
     searchById(book, input - 1);
 }
@@ -68,15 +68,15 @@ void searchById(phonebook *book, int id)
     std::cout << '|';
     std::cout << std::left << std::setw(10) << id + 1;
     std::cout << '|';
-    print_text(book[id].first_name);
+    print_text(book[id].GetFirstName());
     std::cout << '|';
-    print_text(book[id].last_name);
+    print_text(book[id].GetLastName());
     std::cout << '|';
-    print_text(book[id].nick_name);
+    print_text(book[id].GetNickName());
     std::cout << '|';
-    print_text(book[id].phone_number);
+    print_text(book[id].GetPhoneNumber());
     std::cout << '|';
-    print_text(book[id].darkest_secret);
+    print_text(book[id].GetDarkestSecret());
     std::cout << '|';
     std::cout << '\n';
      std::cout << "-------------------------------------------------------------------\n";

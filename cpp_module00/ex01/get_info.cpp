@@ -1,53 +1,53 @@
-#include "book.hpp"
+#include "phone.hpp"
 
 void getFirstName(phonebook *book)
 {
     std::string input;
     std::cout << "Plis inform your first name\n";
-    std::cin >> input;
+    getline(std::cin, input);
     if (input.size() > 10)
         input[9] = '.';
-    book->first_name = input;   
+    book->SetFirstName(input);   
 }
 
 void getLastName(phonebook *book)
 {
     std::string input;
     std::cout << "Plis inform your last name\n";
-    std::cin >> input;
+    getline(std::cin, input);
     if (input.size() > 10)
         input[9] = '.';
-    book->last_name = input;
+    book->SetLastName(input);
 }
 
 void getNickName(phonebook *book)
 {
     std::string input;
     std::cout << "Plis inform your nick name\n";
-    std::cin >> input;
+    getline(std::cin, input);
     if (input.size() > 10)
         input[9] = '.';
-    book->nick_name = input;
+    book->SetNickName(input);
 }
 
 void getPhoneNumber(phonebook *book)
 {
     std::string input;
     std::cout << "Plis inform your phone number\n";
-    std::cin >> input;
+    getline(std::cin, input);
     if (input.size() > 10)
         input[9] = '.';
-    book->phone_number = input;
+    book->SetPhoneNumber(input);
 }
 
 void getDarkestSecret(phonebook *book)
 {
     std::string input;
     std::cout << "Plis inform your darkest secret\n";
-    std::cin >> input;
+    getline(std::cin, input);
     if (input.size() > 10)
         input[9] = '.';
-    book->darkest_secret = input;
+    book->SetDarkestSecret(input);
 }
 
 void getInfo(phonebook *book)

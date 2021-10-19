@@ -1,6 +1,6 @@
-#include "book.hpp"
+#include  "phone.hpp"
 
-int main(int argc, char **argv)
+int main(int argc , char **argv)
 {
     phonebook book[8];
 
@@ -17,12 +17,15 @@ int main(int argc, char **argv)
         std::cin >> input;
         if (input == "ADD")
         {
-            getInfo(&book[i++]);
-          //  test_input(&book[i++]);
+            //getInfo(&book[i++]);
+            test_input(&book[i++]);
         }
         else if (input == "SEARCH")
             printfList(book);
         else if (input != "EXIT")
             std::cout << "ERROR COMMAND\n";
     }
+
+
+    return (0);
 }
