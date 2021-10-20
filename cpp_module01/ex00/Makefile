@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = zumbis
 
-SRCS = main.cpp utils.cpp format.cpp getter_setter.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

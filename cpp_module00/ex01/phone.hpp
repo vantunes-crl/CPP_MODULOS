@@ -6,6 +6,7 @@
 #include <string>
 #include <iomanip>
 #include <unistd.h>
+#include <string>
 
 class phonebook {
     private:
@@ -15,36 +16,17 @@ class phonebook {
         std::string phone_number;
         std::string darkest_secret;
     public:
-        void SetFirstName(std::string str) {
-            first_name = str;
-        }
-        void SetLastName(std::string str){
-            last_name = str;
-        }
-        void SetNickName(std::string str){
-            nick_name = str;
-        }
-        void SetPhoneNumber(std::string str){
-            phone_number = str;
-        }
-        void SetDarkestSecret(std::string str){
-            darkest_secret = str;
-        }
-        std::string GetFirstName(){
-            return (first_name);
-        }
-        std::string GetLastName(){
-            return (last_name);
-        }
-        std::string GetNickName(){
-            return (nick_name);
-        }
-        std::string GetPhoneNumber(){
-            return (phone_number);
-        }
-        std::string GetDarkestSecret(){
-            return (darkest_secret);
-        }
+        phonebook();
+        void SetFirstName(std::string str);
+        void SetLastName(std::string str);
+        void SetNickName(std::string str);
+        void SetPhoneNumber(std::string str);
+        void SetDarkestSecret(std::string str);
+        std::string GetFirstName();
+        std::string GetLastName();
+        std::string GetNickName();
+        std::string GetPhoneNumber();
+        std::string GetDarkestSecret();
 };
 
 void test_input(phonebook *book);
