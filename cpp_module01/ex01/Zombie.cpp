@@ -6,13 +6,9 @@ std::string Zombie::GetName() {return (this->name);}
 
 Zombie::Zombie()
 {}
+
 Zombie::~Zombie()
 {}
-
-void deleteHorde(Zombie *Horde)
-{
-    
-}
 
 void Zombie::annunce()
 {

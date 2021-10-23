@@ -2,5 +2,8 @@
 
 int main(int argc, char **argv)
 {
-    zombieHorde(5, "Paulo");
+    Zombie *zombie;
+
+    zombie = zombieHorde(5, "Paulo");
+    delete[] zombie;
 }
