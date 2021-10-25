@@ -15,16 +15,5 @@ public:
     std::string const &GetType() const;
 };
 
-Weapon::Weapon():
-    type("")
-{}
-
-Weapon::Weapon(std::string const &type):
-    type(type)
-{}
-
-Weapon::~Weapon()
-{}
-
 
 #endif
