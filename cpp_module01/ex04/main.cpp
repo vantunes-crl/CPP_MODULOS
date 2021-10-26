@@ -39,11 +39,17 @@ int main(int argc, char **argv)
     std::fstream outfile;
     std::string OutFileName;
 
-    
+	OutFileName.append(argv[1]);
+	OutFileName.append(".reverse");
+	outfile.open(OutFileName, std::ios::out);
+	if (!outfile)
+		return (error(2));
     file.open(argv[1], std::ios::in);
     if (!file)
-        return (error(2));
+        return (error(3));
     while (getline(file, text))
-        std::cout << replace_str(text, argv[2], argv[3]) << '\n';
+        outfile << replace_str(text, argv[2], argv[3]) << '\n';
+	outfile.close();
+	file.close();
     return (0);
 }
