@@ -13,8 +13,8 @@ std::string replace_str(std::string line, std::string search, std::string replac
 	std::stringstream ss;
 	size_t j;
 	size_t slength(search.length());
-
-	for (size_t i = 0; i < line.length(); i++)
+    size_t i = -1;
+	while (++i < line.length())
 	{
 		j = 0;
 		while (line[i + j] == search[j] && j < slength)
@@ -30,29 +30,20 @@ std::string replace_str(std::string line, std::string search, std::string replac
 	return (ss.str());
 }
 
-int replace(std::string file_name, std::string s1, std::string s2)
-{
-    std::fstream file;
-    file.open(file_name, std::ios::in);
-    if (!file)
-        return (error(2));
-    std::string text;
-    std::string x;
-    while (getline(file, x))
-    {
-        std::cout << replace_str(x, s1, s2);     
-    }
-
-    return (0);
-}
-
 int main(int argc, char **argv)
 {
     if (argc != 4)
         return (error(1));
-    std::string file = argv[1];
-    std::string s1 = argv[2];
-    std::string s2 = argv[3];
-    replace(file, s1, s2);
+    std::fstream file;
+    std::string text;
+    std::fstream outfile;
+    std::string OutFileName;
+
+    
+    file.open(argv[1], std::ios::in);
+    if (!file)
+        return (error(2));
+    while (getline(file, text))
+        std::cout << replace_str(text, argv[2], argv[3]) << '\n';
     return (0);
 }
