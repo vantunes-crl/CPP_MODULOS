@@ -1,3 +1,6 @@
+#ifndef HUMAN_B_HPP
+#define HUMAN_B_HPP
+
 #include "Weapon.hpp"
 #include <iostream>
 
@@ -8,7 +11,11 @@ private:
     const Weapon *weapon;
 public:
     HumanB(std::string const &name);
-    virtual ~HumanB();
-    void SetWeapon(const Weapon &weapon);
-    void attack() const;
+    void setWeapon(const Weapon &weapon);
+    void attack(void) const;
+    ~HumanB();
 };
+
+
+
+#endif
