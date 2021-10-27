@@ -10,20 +10,20 @@ int error(int i)
     return (i);
 }
 
-std::string replace_str(std::string line, std::string search, std::string replace)
+std::string replace_str(std::string line, std::string s1, std::string s2)
 {
 	std::stringstream ss;
 	size_t j;
-	size_t slength(search.length());
+	size_t len(s1.length());
     size_t i = -1;
 	while (++i < line.length())
 	{
 		j = 0;
-		while (line[i + j] == search[j] && j < slength)
+		while (line[i + j] == s1[j] && j < len)
 			j++;
-		if (j == slength)
+		if (j == len)
 		{
-			ss << replace;
+			ss << s2;
 			i += (j - 1);
 		}
 		else
