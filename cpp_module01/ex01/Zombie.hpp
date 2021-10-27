@@ -9,13 +9,12 @@ class Zombie{
     std::string name;
     public:
         Zombie();
+        Zombie* zombieHorde(int N, std::string name);
         virtual ~Zombie();
         void SetName(std::string name);
         std::string GetName();
         void annunce();
 };
 
-void deleteHorde(Zombie *Horde);
-Zombie* zombieHorde( int N, std::string name );
 
 #endif

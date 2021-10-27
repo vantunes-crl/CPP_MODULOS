@@ -10,22 +10,17 @@ std::string RandomName()
     return (name);
 }
 
-Zombie* zombieHorde(int N, std::string name)
+Zombie* Zombie::zombieHorde(int N, std::string name)
 {
     int i = 0;
-
     if (N <= 0 || N > INT32_MAX)
     {
         std::cout << "Incorrect input, setting by default to 1\n";
         N = 1;
     }
-    Zombie *Horde = new Zombie[N];
-    Horde[0].SetName(name);
-    Horde[0].annunce();
-    while (++i < N)
-    {
-        Horde[i].SetName(RandomName());
-        Horde[i].annunce();
-    }
-    return (Horde);
+    Zombie	*horde = new Zombie[N];
+	for (int i = 0; i < N; i++){
+		horde[i].SetName(name);
+	}
+	return (horde);
 };

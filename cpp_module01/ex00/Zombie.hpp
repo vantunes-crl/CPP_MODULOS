@@ -8,13 +8,12 @@ class Zombie {
         std::string name;
     public:
         Zombie();
+        void randomChump(std::string name);
+        Zombie* newZombie(std::string name);
         virtual ~Zombie();
         void SetName(std::string str);
         std::string GetName();
         void announce();
 };
-
-Zombie* newZombie(std::string name);
-void randomChump( std::string name );
 
 #endif
