@@ -4,7 +4,9 @@
 
 int error(int i)
 {
-    std::cout << "Error\n";
+	std::string Error[2] = {"File Error", "Arg Error"};
+
+    std::cout << Error[i] << '\n';
     return (i);
 }
 
@@ -43,10 +45,17 @@ int main(int argc, char **argv)
 	OutFileName.append(".reverse");
 	outfile.open(OutFileName, std::ios::out);
 	if (!outfile)
-		return (error(2));
+	{
+		outfile.close();
+		return (error(0));
+	}
     file.open(argv[1], std::ios::in);
     if (!file)
-        return (error(3));
+	{
+		file.close();
+		outfile.close();
+        return (error(0));
+	}
     while (getline(file, text))
         outfile << replace_str(text, argv[2], argv[3]) << '\n';
 	outfile.close();
