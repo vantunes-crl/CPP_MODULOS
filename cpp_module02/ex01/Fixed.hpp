@@ -18,6 +18,7 @@ public:
     float toFloat(void) const;
     int toInt(void) const;
     int GetRawBits(void) const;
+    void SetRawBits(const int n);
 
     Fixed& operator=(Fixed const &);
     ~Fixed(void);

@@ -54,3 +54,8 @@ Fixed::Fixed( Fixed const &src )
 {
     *this = src;
 }
+
+void Fixed::SetRawBits(const int n)
+{
+    FixedValue = n;
+}
