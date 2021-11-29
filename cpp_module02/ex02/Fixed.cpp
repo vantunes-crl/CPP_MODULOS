@@ -61,33 +61,76 @@ void Fixed::SetRawBits(const int n)
 
 /* prefix */
 Fixed &Fixed::operator++()
-{}
+{
+    this->FixedValue++;
+    return (*this);
+}
 
 /* posfix */
 Fixed &Fixed::operator++( int )
-{}
+{
+    Fixed temp = this->FixedValue;
+    this->FixedValue++;
+    return (temp);
+}
 
 /* prefix */
 Fixed &Fixed::operator--()
-{}
+{
+    this->FixedValue--;
+    return (*this);
+}
 
 /* posfix */
 Fixed &Fixed::operator--( int )
-{}
+{
+    Fixed temp = this->FixedValue;
+    this->FixedValue--;
+    return (temp);
+}
 
 /* Relational operators */
 bool Fixed::operator<(const Fixed& fix)
-{}
+{
+    if (this->FixedValue < fix.FixedValue)
+        return (true);
+    return (false);
+}
+
 bool Fixed::operator>(const Fixed& fix)
-{}
+{
+    if (this->FixedValue > fix.FixedValue)
+        return (true);
+    return (false);
+}
+
 bool Fixed::operator>=(const Fixed& fix)
-{}
+{
+    if (this->FixedValue >= fix.FixedValue)
+        return (true);
+    return (false);
+}
+
 bool Fixed::operator<=(const Fixed& fix)
-{}
+{
+    if (this->FixedValue <= fix.FixedValue)
+        return (true);
+    return (false);
+}
+
 bool Fixed::operator==(const Fixed& fix)
-{}
+{
+    if (this->FixedValue == fix.FixedValue)
+        return (true);
+    return (false);
+}
+
 bool Fixed::operator!=(const Fixed& fix)
-{}
+{
+    if (this->FixedValue != fix.FixedValue)
+        return (true);
+    return (false);
+}
 
 /* Binary operators */
 Fixed Fixed::operator+(const Fixed& fix)
