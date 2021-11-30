@@ -25,11 +25,11 @@ public:
     /* prefix */
     Fixed& operator++();
     /* postfix */
-    Fixed& operator++( int );
+    Fixed operator++( int );
     /* prefix */
     Fixed& operator--();
     /* posfix */
-    Fixed& operator--( int );
+    Fixed operator--( int );
 
     /* Relational operators */
     bool operator<(const Fixed& fix);
@@ -45,7 +45,11 @@ public:
     Fixed operator/(const Fixed& fix);
     Fixed operator*(const Fixed& fix);
 
+    static Fixed &min(Fixed &a, Fixed &b);
+    static Fixed &max(Fixed &a, Fixed &b);
 
+    static const Fixed &min(const Fixed &a, const Fixed &b);
+    static const Fixed &max(const Fixed &a, const Fixed &b);
 
     ~Fixed(void);
    

@@ -14,7 +14,7 @@ Fixed::Fixed(const int n)
 
 /* Convert float to fixed point with bit shiffing */
 Fixed::Fixed(const float n)
-:FixedValue(n * ( 1 << FractralBits))
+:FixedValue(roundf(n * ( 1 << FractralBits)))
 {}
 
 /* floating point representation of thefixed point value into the parameter output stream */
@@ -67,10 +67,10 @@ Fixed &Fixed::operator++()
 }
 
 /* posfix */
-Fixed &Fixed::operator++( int )
+Fixed Fixed::operator++( int )
 {
-    Fixed temp = this->FixedValue;
-    this->FixedValue++;
+    Fixed temp = *this;
+    ++*this;
     return (temp);
 }
 
@@ -82,10 +82,10 @@ Fixed &Fixed::operator--()
 }
 
 /* posfix */
-Fixed &Fixed::operator--( int )
+Fixed Fixed::operator--( int )
 {
-    Fixed temp = this->FixedValue;
-    this->FixedValue--;
+    Fixed temp = *this;
+    ++*this;
     return (temp);
 }
 
@@ -134,10 +134,25 @@ bool Fixed::operator!=(const Fixed& fix)
 
 /* Binary operators */
 Fixed Fixed::operator+(const Fixed& fix)
-{}
+{
+    return (this->FixedValue + fix.FixedValue);
+}
+
 Fixed Fixed::operator-(const Fixed& fix)
-{}
+{
+    return (this->FixedValue - fix.FixedValue);
+}
 Fixed Fixed::operator/(const Fixed& fix)
-{}
+{
+    return (Fixed(this->toFloat() * fix.toFloat()));
+}
 Fixed Fixed::operator*(const Fixed& fix)
-{}
+{
+    return (Fixed(this->toFloat() * fix.toFloat()));
+}
+
+static Fixed &min(Fixed &a, Fixed &b);
+static Fixed &max(Fixed &a, Fixed &b);
+
+static const Fixed &min(const Fixed &a, const Fixed &b);
+static const Fixed &max(const Fixed &a, const Fixed &b);
