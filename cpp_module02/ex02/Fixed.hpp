@@ -32,18 +32,18 @@ public:
     Fixed operator--( int );
 
     /* Relational operators */
-    bool operator<(const Fixed& fix);
-    bool operator>(const Fixed& fix);
-    bool operator>=(const Fixed& fix);
-    bool operator<=(const Fixed& fix);
-    bool operator==(const Fixed& fix);
-    bool operator!=(const Fixed& fix);
+    bool operator<(const Fixed& fix) const;
+    bool operator>(const Fixed& fix) const;
+    bool operator>=(const Fixed& fix) const;
+    bool operator<=(const Fixed& fix) const;
+    bool operator==(const Fixed& fix) const;
+    bool operator!=(const Fixed& fix) const;
 
     /* Binary operators */
-    Fixed operator+(const Fixed& fix);
-    Fixed operator-(const Fixed& fix);
-    Fixed operator/(const Fixed& fix);
-    Fixed operator*(const Fixed& fix);
+    Fixed operator+(const Fixed& fix) const;
+    Fixed operator-(const Fixed& fix) const;
+    Fixed operator/(const Fixed& fix) const;
+    Fixed operator*(const Fixed& fix) const;
 
     static Fixed &min(Fixed &a, Fixed &b);
     static Fixed &max(Fixed &a, Fixed &b);

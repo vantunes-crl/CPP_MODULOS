@@ -16,7 +16,7 @@ Fixed::Fixed(const int n)
 }
 
 Fixed::Fixed(const float n)
-:FixedValue(n * ( 1 << FractralBits))
+:FixedValue(roundf(n * ( 1 << FractralBits)))
 {
 
 }
