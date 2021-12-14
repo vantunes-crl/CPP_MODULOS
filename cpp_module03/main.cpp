@@ -2,6 +2,10 @@
 
 int main()
 {
-    ClapTrap ClapTrap("Alfredo");
+    ClapTrap Clap("Alfredo");
+
+    Clap.attack("Random Target");
+    Clap.takeDamage(20);
+    Clap.beRepaired(20);
 
 }

@@ -3,8 +3,7 @@
 
 #include <iostream>
 
-class ClapTrap
-{
+class ClapTrap {
     private:
         std::string name;
         int hitPoints;
@@ -19,7 +18,7 @@ class ClapTrap
         void beRepaired(unsigned int amount);
 
         virtual ~ClapTrap();
-}
+};
 
 
 #endif
