@@ -3,10 +3,13 @@
 
 int main()
 {
-    ClapTrap Clap("Alfredo");
+    ScavTrap Scav("Souza");
+    ScavTrap CpyScav(Scav);
 
-    // Clap.attack("Random Target");
-    // Clap.takeDamage(20);
-    // Clap.beRepaired(20);
-    ScavTrap Scav(Clap);
+    CpyScav.attack("Monster");
+    CpyScav.takeDamage(20);
+    Scav.beRepaired(20);
+
+    Scav.guardGate();
+
 }

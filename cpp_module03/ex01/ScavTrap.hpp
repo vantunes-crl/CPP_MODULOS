@@ -4,19 +4,22 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap: public ClapTrap
 {
     private:
-        ClapTrap name;
+        ScavTrap(void);
     public:
-        /* CONSTRUCTOR */
-        ScavTrap();
-        ScavTrap(const ClapTrap &name);
+        /* Constructor */
+        ScavTrap(std::string name);
+        
+        /* Overloading */
+        ScavTrap(const ScavTrap &cpy);
+        ScavTrap &operator=(const ScavTrap &sign);
 
-        /* FUNCTIONS */
-        void attack(std::string const & target);
+        /* Functions */
+        void guardGate();
 
-        /* DESTRUCTOR */
+        /* Destructor */
         virtual ~ScavTrap();
 };
 
