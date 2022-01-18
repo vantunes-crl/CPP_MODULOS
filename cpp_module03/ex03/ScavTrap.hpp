@@ -4,13 +4,12 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
-    private:
-
+    protected:
+        ScavTrap(void);
     public:
         /* Constructor */
-        ScavTrap(void);
         ScavTrap(std::string name);
         
         /* Overloading */

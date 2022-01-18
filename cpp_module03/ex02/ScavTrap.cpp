@@ -33,11 +33,13 @@ ScavTrap::ScavTrap(const ScavTrap &cpy)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &sign)
 {
+    if (this == &sign)
+        return *this; 
     std::cout << "Operator Overload Call\n";
-    this->setName(sign.getName());
-    this->setHitpoints(sign.getHitpoints());
-    this->setEnergPoints(sign.getEnergPoints());
-    this->setAtcDamage(sign.getAtcDamage());
-
+    name = sign.name;
+    hitPoints = sign.hitPoints;
+    energyPoints = sign.energyPoints;
+    atcDamage  = sign.atcDamage;
     return *this;
+
 }

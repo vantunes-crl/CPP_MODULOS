@@ -20,6 +20,7 @@ FragTrap::~FragTrap()
 }
 
 FragTrap::FragTrap(const FragTrap &cpy)
+:ClapTrap{cpy}
 {
     std::cout << "FragTrap Copy Constructor Called\n";
     *this = cpy;
@@ -29,10 +30,10 @@ FragTrap &FragTrap::operator=(const FragTrap &sign)
 {
     if (this == &sign)
         return (*this);
-    this->setName(sign.getName());
-    this->setHitpoints(sign.getHitpoints());
-    this->setEnergPoints(sign.getEnergPoints());
-    this->setAtcDamage(sign.getAtcDamage());
+    name = sign.name;
+    hitPoints = sign.hitPoints;
+    energyPoints = sign.energyPoints;
+    atcDamage  = sign.atcDamage;
     return (*this);
 }
 

@@ -17,7 +17,7 @@ class ScavTrap: public ClapTrap
         ScavTrap &operator=(const ScavTrap &sign);
 
         /* Functions */
-        void guardGate();
+        void guardGate() const;
 
         /* Destructor */
         virtual ~ScavTrap();

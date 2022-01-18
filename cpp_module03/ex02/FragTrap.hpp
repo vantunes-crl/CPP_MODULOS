@@ -12,7 +12,6 @@ class FragTrap: public ClapTrap
         FragTrap(const FragTrap &cpy);
         FragTrap &operator=(const FragTrap &sign);
 
-
         void highFivesGuys(void);
         virtual ~FragTrap();
 };

@@ -1,13 +1,10 @@
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    FragTrap Frag("Souza");
-    FragTrap CpyFrag(Frag);
+    DiamondTrap d("Nunes");
 
-    CpyFrag.highFivesGuys();
-
-    std::cout << CpyFrag.getEnergPoints() << std::endl;
+    d.attack("hitler");
+    d.whoAmI();
 
 }

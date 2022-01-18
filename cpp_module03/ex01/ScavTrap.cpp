@@ -19,13 +19,14 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap Destructor Called\n";
 }
 
-void ScavTrap::guardGate()
+void ScavTrap::guardGate() const
 {
-    std::cout << "ScavTrap have enterred in Gate keeper mode.\n";
+    std::cout << this->name << "ScavTrap have enterred in Gate keeper mode.\n";
 }
 
 
 ScavTrap::ScavTrap(const ScavTrap &cpy)
+:ClapTrap{cpy}
 {
     std::cout << "ScavTrap Copy Constructor Called\n";
     *this = cpy;
@@ -33,11 +34,12 @@ ScavTrap::ScavTrap(const ScavTrap &cpy)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &sign)
 {
+    if (this == &sign)
+        return *this;
     std::cout << "Operator Overload Call\n";
-    this->setName(sign.getName());
-    this->setHitpoints(sign.getHitpoints());
-    this->setEnergPoints(sign.getEnergPoints());
-    this->setAtcDamage(sign.getAtcDamage());
-
+    name = sign.name;
+    hitPoints = sign.hitPoints;
+    energyPoints = sign.energyPoints;
+    atcDamage  = sign.atcDamage;
     return *this;
 }
