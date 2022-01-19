@@ -29,3 +29,36 @@ Cat &Cat::operator=(const Cat &assign)
     type = assign.type;
     return *this;
 }
+
+
+// wrong cat without virtual
+
+WrongCat::WrongCat(void)
+{
+    std::cout << "WrongCat  Default Constructor Called\n";
+    type = "WrongCat";
+}
+
+WrongCat::~WrongCat()
+{
+    std::cout << "WrongCat Destructor Called \n";
+}
+
+void WrongCat::makeSound(void) const
+{
+    std::cout << "Miau Miau!\n";
+}
+
+WrongCat::WrongCat(const WrongCat& cpy)
+{
+    std::cout << "WrongCat Copy Constructor Called\n";
+    *this = cpy;
+}
+
+WrongCat &WrongCat::operator=(const WrongCat &assign)
+{
+    if (this == &assign)
+        return (*this);
+    type = assign.type;
+    return *this;
+}

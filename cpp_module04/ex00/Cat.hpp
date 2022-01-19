@@ -17,6 +17,20 @@ public:
     ~Cat();
 };
 
+class WrongCat: public WrongAnimal
+{
+private:
+    
+public:
+    WrongCat(void);
+
+    WrongCat(const WrongCat &);
+    WrongCat &operator=(const WrongCat &);
+
+    void makeSound(void) const;
+    ~WrongCat();
+};
+
 
 
 
