@@ -33,33 +33,20 @@ int main()
     //     delete dogCpy;
     // }
 
-    // {
-    //     Animal *cat = new Cat;
-    //     Animal *dog = new Dog;
-
-    //     *cat = *dog;
-
-    //     std::cout << cat->getType() << std::endl;
-    //     cat->makeSound();
-    //     std::cout << dog->getType() << std::endl;
-    //     dog->makeSound();
-    
-    //     delete cat;
-    //     delete dog;
-    // }
-
     {
-        Animal *animals[50];
-        for(int i=0; i < 50 ;i++)
-        {
-            if (i % 2 == 0)
-                animals[i] = new Cat;
-            else
-                animals[i] = new Dog;
-        }
+        Animal *cat = new Cat;
+        Animal *dog = new Dog;
 
-        for (int i=0; i < 50; i++)
-            delete animals[i];
+        *cat = *dog;
+
+        std::cout << cat->getType() << std::endl;
+        cat->makeSound();
+        std::cout << dog->getType() << std::endl;
+        dog->makeSound();
+    
+        delete cat;
+        delete dog;
     }
+
 
 }
