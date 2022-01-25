@@ -3,14 +3,14 @@
 
 #include "ICharacter.hpp"
 
-class Character : ICharacter 
+class Character : public ICharacter 
 {
     private:
         std::string name;
         AMateria *inventary[3];
     public:
         Character(void);
-
+        Character(std::string name);
         std::string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);

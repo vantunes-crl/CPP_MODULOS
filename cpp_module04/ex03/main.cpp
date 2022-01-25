@@ -1,4 +1,8 @@
 #include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
@@ -17,5 +21,5 @@ int main()
     delete bob;
     delete me;
     delete src;
-return 0;
+    return 0;
 }

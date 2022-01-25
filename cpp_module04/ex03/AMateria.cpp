@@ -12,11 +12,7 @@ AMateria::AMateria(std::string const &type)
 {
 }
 
-//Pure Functions
-AMateria * AMateria::clone(void) const
-{}
-
-//Normal Fucntions
+//Normal Fuctions
 void AMateria::use(ICharacter &target)
 {}
 
