@@ -16,5 +16,7 @@ AMateria *Cure::clone(void) const
 
 void Cure::use(ICharacter &target)
 {
+    if (!&target)
+        return;
     std::cout << "Cure: * heals " << target.getName() << "'s wounds *\n";
 }

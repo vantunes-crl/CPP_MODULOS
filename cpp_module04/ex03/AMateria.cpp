@@ -1,6 +1,5 @@
 #include "AMateria.hpp"
 
-
 // Constructors
 AMateria::AMateria(void)
 :type("")

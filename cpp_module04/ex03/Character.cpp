@@ -4,7 +4,7 @@
 Character::Character(void)
 {
     for (int i = 0; i < 4; i++)
-        inventary[i] = nullptr;
+        inventary[i] = 0;
 }
 
 Character::Character(std::string name)
@@ -13,7 +13,8 @@ Character::Character(std::string name)
 
 //Destructors
 Character::~Character(void)
-{}
+{
+}
 
 //getters
 std::string const &Character::getName(void) const
@@ -21,26 +22,28 @@ std::string const &Character::getName(void) const
 
 
 //functions pure virtual
-void Character::equip(AMateria* m)
-{
-    int i = 0;
-    while (inventary[i])
-        i++;
-    if (!inventary[i])
+void Character::equip(AMateria *m)
+{ 
+    if (!m)
+        return;
+    for (int i = 0; i < 4; i++)
     {
-        inventary[i] = m;
-        std::cout << "Equiped " << m->getType() << " slot " << i << std::endl;
+        if (!inventary[i])
+        {
+            inventary[i] = m;
+            std::cout << "Equiped " << m->getType() << " slot " << i << std::endl;
+            return ;
+        }
     }
-    else
-        std::cout << "Inventary is full\n";
+    std::cout << "Inventary is full\n";
 }
 
 void Character::unequip(int idx)
 {
     if (idx > 3 || idx < 0)
-        std::cout << "index out of range, invenrary just have 4 slots\n";
+        std::cout << "index out of range, inventary just have 4 slots\n";
     else
-        inventary[idx] = nullptr;
+        inventary[idx] = 0;
 }
 
 void Character::use(int idx, ICharacter& target)
@@ -48,6 +51,9 @@ void Character::use(int idx, ICharacter& target)
     if (idx > 3 || idx < 0)
         std::cout << "index out of range, inventary just have 4 slots\n";
     else
-        inventary[idx]->use(target);
+        if (inventary[idx])
+            inventary[idx]->use(target);
+        else
+            std::cout << "Slot empty\n";
 }
 

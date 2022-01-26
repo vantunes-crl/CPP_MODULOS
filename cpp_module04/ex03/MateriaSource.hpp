@@ -7,7 +7,7 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria *store[3];
+        AMateria *store[4];
     public:
         MateriaSource(void);
         void learnMateria(AMateria*);
