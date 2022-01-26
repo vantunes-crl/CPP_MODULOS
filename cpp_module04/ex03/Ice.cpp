@@ -20,3 +20,14 @@ void Ice::use(ICharacter &target)
         return;
     std::cout << "Ice: * shoots an ice bolt at " << target.getName() << "*\n";
 }
+
+Ice::Ice(const Ice &cpy)
+{
+    *this = cpy;
+}
+
+Ice &Ice::operator=(const Ice &assing)
+{
+    type = assing.type;
+    return (*this);
+}

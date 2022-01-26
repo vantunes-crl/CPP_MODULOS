@@ -47,3 +47,17 @@ AMateria *MateriaSource::createMateria(std::string const &type)
     std::cout << "Material Recipe not finded!\n";
     return (0);
 }
+
+
+
+MateriaSource::MateriaSource(const MateriaSource &cpy)
+{
+    *this = cpy;
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &assing)
+{
+    for (int i = 0; i < 4; i++)
+        store[i] = assing.store[i];
+    return (*this);
+}

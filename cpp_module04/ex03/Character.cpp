@@ -57,3 +57,15 @@ void Character::use(int idx, ICharacter& target)
             std::cout << "Slot empty\n";
 }
 
+Character::Character(const Character &cpy)
+{
+    *this = cpy;
+}
+
+Character &Character::operator=(const Character &assing)
+{
+    name = assing.name;
+    for (int i = 0; i < 4; i++)
+        inventary[i] = assing.inventary[i];
+    return (*this);
+}

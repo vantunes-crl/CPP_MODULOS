@@ -6,10 +6,19 @@
 class Ice : public AMateria
 {
     public:
+        //Contructors
         Ice(void);
-        ~Ice();
+
+        //Assing Operator Overload
+        Ice(const Ice &);
+        Ice &operator=(const Ice &);
+
+        //Functions
         AMateria* clone(void) const;
         void use(ICharacter &target);
+
+        //Destructors
+        ~Ice();
 };
 
 

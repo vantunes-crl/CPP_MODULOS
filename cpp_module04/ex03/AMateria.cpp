@@ -23,3 +23,14 @@ std::string const & AMateria::getType(void) const
 AMateria::~AMateria()
 {
 }
+
+AMateria::AMateria(const AMateria &cpy)
+{
+    *this = cpy;
+}
+
+AMateria &AMateria::operator=(const AMateria &assing)
+{
+    this->type = assing.type;
+    return (*this);
+}

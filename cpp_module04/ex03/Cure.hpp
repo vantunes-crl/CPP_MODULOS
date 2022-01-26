@@ -6,10 +6,19 @@
 class Cure : public AMateria
 {
     public:
+        //Constructors
         Cure();
-        ~Cure();
+
+        //Functions
         AMateria *clone(void) const;
         void use(ICharacter &target);
+
+        //Operator assing Overload
+        Cure(const Cure &);
+        Cure &operator=(const Cure &);
+
+        //Destructors
+        ~Cure();
 };
 
 

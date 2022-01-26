@@ -20,3 +20,14 @@ void Cure::use(ICharacter &target)
         return;
     std::cout << "Cure: * heals " << target.getName() << "'s wounds *\n";
 }
+
+Cure::Cure(const Cure &cpy)
+{
+    *this = cpy;
+}
+
+Cure &Cure::operator=(const Cure &assing)
+{
+    type = assing.type;
+    return (*this);
+}
