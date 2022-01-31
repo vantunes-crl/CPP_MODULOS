@@ -2,9 +2,13 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <stdexcept>
 #include "gradeException.hpp"
+#include "Form.hpp"
 
-class Bureaucrat : public GradeTooLowException, public GradeTooHighException
+class Form;
+
+class Bureaucrat : public GradeTooHighException, public GradeTooLowException 
 {
     private:
         std::string name;
@@ -13,6 +17,7 @@ class Bureaucrat : public GradeTooLowException, public GradeTooHighException
         //functions and getters
         int getGrade(void) const;
         std::string getName(void) const;
+        void signForm(Form &f);
 
         //Operator Assing Overload
         Bureaucrat(const Bureaucrat &);
@@ -30,7 +35,8 @@ class Bureaucrat : public GradeTooLowException, public GradeTooHighException
         Bureaucrat(std::string const &name, int grade);
         ~Bureaucrat();
 };
-std::ostream&		operator<<( std::ostream& os, const Bureaucrat& rhs );
+
+std::ostream&   operator<<( std::ostream& os, const Bureaucrat& obj);
 
 
 
