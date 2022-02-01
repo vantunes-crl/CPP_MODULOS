@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     Bureaucrat	obj(argv[1], x);
 	std::cout << obj << std::endl;
 
-    Form F("Form of peace!", 50);
+    Form F("28C", 50);
 
     std::cout << F << std::endl;
     F.beSigned(obj);

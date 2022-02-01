@@ -2,9 +2,7 @@
 
 Form::Form()
 :sign(false), name("no name"), grade(150)
-{
-
-}
+{}
 
 Form::Form(const std::string &name, int grade)
 :name(name), grade(grade), sign(false)
@@ -27,6 +25,7 @@ Form::~Form()
 {
 }
 
+// Functions
 void Form::beSigned(Bureaucrat &obj)
 {
     try
@@ -58,12 +57,14 @@ void Form::setSign(bool b)
 std::string Form::getName(void) const
 {return this->name;}
 
-bool Form::getSign(void)
+bool Form::getSign(void) const
 {return this->sign;}
 
 int Form::getGrade(void) const
 {return this->grade;}
 
+void Form::execute(Bureaucrat const &executor) const
+{}
 
 //Overload << to accept Form obj
 std::ostream&		operator<<(std::ostream& os, const Form& obj ) {

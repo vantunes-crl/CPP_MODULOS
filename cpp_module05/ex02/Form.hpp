@@ -4,10 +4,11 @@
 #include <iostream>
 #include "gradeException.hpp"
 #include "Bureaucrat.hpp"
+#include <fstream>
 
 class Bureaucrat;
 
-class Form : public GradeTooHighException, public GradeTooLowException
+class Form : public GradeTooHighException, public GradeTooLowException, public FormNotSignException, public FailCreateFile
 {
     private:
         const std::string name;
@@ -20,6 +21,7 @@ class Form : public GradeTooHighException, public GradeTooLowException
 
         //functions
         void beSigned(Bureaucrat &obj);
+        virtual void execute(Bureaucrat const &executor) const = 0;
 
         //operator assing overload
         Form(const Form &);
@@ -30,7 +32,7 @@ class Form : public GradeTooHighException, public GradeTooLowException
 
         //Getters
         std::string getName(void) const;
-        bool getSign(void);
+        bool getSign(void) const;
         int getGrade(void) const;
 
         //Destructor
