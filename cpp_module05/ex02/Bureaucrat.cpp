@@ -27,11 +27,11 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &assing)
 }
 
 //increment/decrement operators overload
-Bureaucrat &Bureaucrat::operator++(void)
-{return (setGrade(grade - 1));}
+void Bureaucrat::operator++(void)
+{this->grade--;}
 
-Bureaucrat &Bureaucrat::operator--(void)
-{return (setGrade(grade + 1));}
+void Bureaucrat::operator--(void)
+{this->grade++;}
 
 //Getters
 int Bureaucrat::getGrade(void) const
@@ -40,8 +40,8 @@ int Bureaucrat::getGrade(void) const
 std::string Bureaucrat::getName(void) const
 {return (this->name);}
 
-//setter function @return self class to use in increment/decrement overload and other cases to verify exceptions
-Bureaucrat &Bureaucrat::setGrade(int grade)
+//setter
+void Bureaucrat::setGrade(int grade)
 {
     try
 	{
@@ -52,12 +52,15 @@ Bureaucrat &Bureaucrat::setGrade(int grade)
 		else
 			this->grade = grade;
 	}
-	catch(std::exception &e)
+	catch(GradeTooHighException &e)
 	{
-        std::cerr << "Bureaucrat Error: " << e.what() << std::endl;
+        std::cerr << "Bureaucrat Error: Grade too high!" << std::endl;
+	}
+	catch(GradeTooLowException &e)
+	{
+        std::cerr << "Bureaucrat Error: Grade too low!" << std::endl;
 	}
 
-	return *this;
 }
 
 

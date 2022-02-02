@@ -1,6 +1,7 @@
 #include <sstream>
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(int argc, char **argv)
 {
@@ -10,8 +11,11 @@ int main(int argc, char **argv)
     str >> x;
     Bureaucrat	buro1("jose", 1);
     Bureaucrat	buro2("joao", 25);
+    Intern someRandomIntern;
 
-    Form*	tree = new ShrubberyCreationForm("Home");
+    Form* tree;
+
+    tree = someRandomIntern.makeForm("ShrubberyCreationForm", "home");
 
     tree->beSigned(buro1);
 
@@ -20,6 +24,4 @@ int main(int argc, char **argv)
     std::cout << buro2 << std::endl;
 	++buro2;
     std::cout << buro2 << std::endl;
-
-    delete tree;
 }
