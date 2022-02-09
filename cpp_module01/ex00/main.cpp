@@ -11,8 +11,10 @@ std::string RandomName()
 
 int main(int argc, char **argv)
 {
-    newZombie(RandomName());
+    Zombie z;
+
+    z.newZombie(RandomName());
     usleep(1000000);
-    randomChump(RandomName());
+    z.randomChump(RandomName());
     return (0);
 }
