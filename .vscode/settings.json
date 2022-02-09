@@ -69,6 +69,10 @@
         "locale": "cpp",
         "mutex": "cpp",
         "ratio": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "list": "cpp",
+        "numbers": "cpp"
     }
 }

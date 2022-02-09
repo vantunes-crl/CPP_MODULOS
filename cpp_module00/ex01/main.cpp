@@ -1,13 +1,5 @@
 #include  "phone.hpp"
 
-phonebook::phonebook()
-{
-    this->last_name = "0";
-    this->first_name = "0";
-    this->nick_name = "0";
-    this->phone_number = "0";
-    this->darkest_secret = "0";
-}
 
 int main(int argc , char **argv)
 {
@@ -20,18 +12,43 @@ int main(int argc , char **argv)
     int i = 0;
     while (input != "EXIT")
     {   
-        if (i == 8)
-            i = 0;
         std::cout << "Hello what i can do for you ?\n";
         std::cout << "OPTIONS: ADD SEARCH EXIT\n";
-        std::cin >> input;
+        getline(std::cin, input);
         if (input == "ADD")
         {
-            //getInfo(&book[i++]);
-            test_input(&book[i++]);
+            if (i == 8)
+                i = 0;
+            book[i].getFirstName();
+            book[i].getLastName();
+            book[i].getNickName();
+            book[i].getPhoneNumber();
+            book[i].getDarkestSecret();
+            i++;
         }
         else if (input == "SEARCH")
-            printfList(book);
+        {
+            std::cout << "---------------------------------------------\n";
+            std::cout << '-' << std::setw(10) << "id"
+            << '|' << std::setw(10) << "First Name "
+            << '|' << std::setw(10) << "Last Name "
+            << '|' << std::setw(10) << " Nick Name -" << std::endl;
+            for (int i = 0; i < 8; i++)
+                book[i].print_text(i);
+            std::cout << std::endl;
+            std::cout << "Plis inform de ID: \n";
+            while (true)
+            {
+                getline(std::cin, input);
+                if (input.length() > 1)
+                    std::cout << "bad input\n";
+                else if (int(input[0 - 48]) > 8)
+                    std::cout << "out of range max 8\n";
+                else
+                    break;
+            }
+            book[int(input[0] - 48)].printContact();
+        }
         else if (input != "EXIT")
             std::cout << "ERROR COMMAND\n";
     }

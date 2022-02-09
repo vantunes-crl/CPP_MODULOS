@@ -9,7 +9,7 @@ OBJS = $(SRCS:.cpp=.o)
 FLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJS)
-	$(CMP) $(OBJS) $(FLAGS) -o $(NAME)
+	$(CMP) $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

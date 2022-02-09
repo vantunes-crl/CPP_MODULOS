@@ -17,7 +17,7 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap Destructor was called\n";
 }
 
-void ClapTrap::attack(std::string const & target)
+void ClapTrap::attack(std::string const & target)-
 {
     std::cout << this->name << " attack " << target << " causing " << this->atcDamage << '\n';
 }
