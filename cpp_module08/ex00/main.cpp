@@ -2,7 +2,7 @@
 #include <vector>
 #include <list>
 
-int main(int argc, char **argv)
+int main()
 {
     std::vector<char> vec;
 
@@ -20,7 +20,9 @@ int main(int argc, char **argv)
         std::cerr << e.what() << std::endl;
     }
 
-    std::list<int> lst = {0,1,2,3,5,4,6};
+    std::list<int> lst;
+    for (int i = 0; i < 6; ++i)
+        lst.push_back(i);
 
     try
     {

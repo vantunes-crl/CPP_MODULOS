@@ -1,6 +1,6 @@
-NAME = easyfind
+NAME = SPAN
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -9,7 +9,7 @@ FLAGS = -Wall -Wextra -Werror
 %.o: %.cpp
 	clang++ ${FLAGS} -c $< -o $@
 
-$(NAME): $(OBJS)
+NAME: $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
